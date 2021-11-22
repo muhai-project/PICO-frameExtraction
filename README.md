@@ -8,6 +8,7 @@ In fact, the conceptual foundations and technical architecture that are required
 
 This repository contains: 
 
+/resources:
 - example systematic reviews from the biomedical domain
 - the PICO ontology (semantic script) 
 - the annotations of the systematic reviews with the PICO ontology (small narrative graph, in accordance with the semantic script)
