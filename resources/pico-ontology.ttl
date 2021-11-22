@@ -1,0 +1,334 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix cp: <http://data.cochrane.org/ontologies/pico/> .
+@prefix cc: <http://data.cochrane.org/ontologies/core/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix proton: <http://proton.semanticweb.org/protonsys#> .
+
+# Ontology Description
+
+<http://data.cochrane.org/ontologies/pico/>
+    rdf:type owl:Ontology ;
+    dcterms:title "Cochrane PICO Ontology"@en ;
+    dcterms:created "2014-02-06"^^xsd:date ;
+    dcterms:description "Cochrane PICO Ontology models the domain of PICO for Cochrane reviews."@en ;
+    dcterms:description <http://data.cochrane.org/sites/data.cochrane.org/files/pico.png> ;
+    rdfs:comment "PICO model for capturing the domain of PICO for Cochrane reviews. The ontology primarily used RDFS. It provides a set of classes and properties that can be used to represent a PICO based research/clinical question."@en ;
+    owl:versionInfo "1.0.0"^^xsd:string ;
+    dcterms:rights "Copyright The Cochrane Collaboration. Creative Commons License: CC BY-NC-ND : Attribution-NonCommercial-NoDerivs : https://creativecommons.org/licenses/by-nc-nd/4.0"@en  .
+
+# Classes
+
+cp:Condition rdf:type owl:Class .
+cp:Condition rdfs:label "Condition"@en .
+cp:Condition rdfs:comment "Conditions for example illness or disease."@en .
+cp:Condition rdfs:isDefinedBy <http://data.cochrane.org/ontologies/pico/> .
+
+cp:Age rdf:type owl:Class .
+cp:Age rdfs:label "Age"@en .
+cp:Age rdfs:comment "The age of a population group"@en .
+cp:Age rdfs:isDefinedBy <http://data.cochrane.org/ontologies/pico/> .
+
+cp:Population rdf:type owl:Class .
+cp:Population rdfs:label "Population"@en .
+cp:Population rdfs:comment "A population defines a group of people/patient in a PICO question."@en .
+cp:Population rdfs:isDefinedBy <http://data.cochrane.org/ontologies/pico/> .
+
+cp:Sex rdf:type owl:Class .
+cp:Sex rdfs:label "Sex"@en .
+cp:Sex rdfs:comment "The sex of a population group"@en .
+cp:Sex rdfs:isDefinedBy <http://data.cochrane.org/ontologies/pico/> .
+
+cp:PICO rdf:type owl:Class .
+cp:PICO rdfs:label "PICO"@en .
+cp:PICO rdfs:comment "A PICO class represents an object that defines a research or a clinical question."@en .
+cp:PICO rdfs:isDefinedBy <http://data.cochrane.org/ontologies/pico/> .
+
+cp:Outcome rdf:type owl:Class .
+cp:Outcome rdfs:label "Outcome"@en .
+cp:Outcome rdfs:comment "The desired outcome of an intervention." .
+cp:Outcome rdfs:isDefinedBy <http://data.cochrane.org/ontologies/pico/> .
+
+cp:OutcomeGroup rdf:type owl:Class .
+cp:OutcomeGroup rdfs:label "OutcomeGroup"@en .
+cp:OutcomeGroup rdfs:comment "An outcome group is a group of outcomes."@en .
+cp:OutcomeGroup rdfs:isDefinedBy <http://data.cochrane.org/ontologies/pico/> .
+
+cp:OutcomeClassification rdf:type owl:Class .
+cp:OutcomeClassification rdfs:label "OutcomeClassification"@en .
+cp:OutcomeClassification rdfs:comment "Classification scheme describing the type of outcome" .
+cp:OutcomeClassification rdfs:isDefinedBy <http://data.cochrane.org/ontologies/pico/> .
+
+cp:Intervention rdf:type owl:Class .
+cp:Intervention rdfs:label "Intervention"@en .
+cp:Intervention rdfs:comment "An intervention in a PICO question is an action under consideration for this population."@en .
+cp:Intervention rdfs:isDefinedBy <http://data.cochrane.org/ontologies/pico/> .
+
+cp:InterventionGroup rdf:type owl:Class .
+cp:InterventionGroup rdfs:label "InterventionGroup"@en .
+cp:InterventionGroup rdfs:comment "An intervention group is a group of interventions for example an arm of a trial."@en .
+cp:InterventionGroup rdfs:isDefinedBy <http://data.cochrane.org/ontologies/pico/> .
+
+cp:AppliedIntervention rdf:type owl:Class .
+cp:AppliedIntervention rdfs:label "AppliedIntervention"@en .
+cp:AppliedIntervention rdfs:comment "Abstract class, the intervention applied (procedure, materials etc)"@en .
+cp:AppliedIntervention rdfs:isDefinedBy <http://data.cochrane.org/ontologies/pico/> .
+
+cp:InterventionProvider rdf:type owl:Class .
+cp:InterventionProvider rdfs:label "InterventionProvider"@en .
+cp:InterventionProvider rdfs:comment "The provider of an intervention"@en .
+cp:InterventionProvider rdfs:isDefinedBy <http://data.cochrane.org/ontologies/pico/> .
+
+cp:InterventionRationale rdf:type owl:Class .
+cp:InterventionRationale rdfs:label "InterventionRationale"@en .
+cp:InterventionRationale rdfs:comment "The rationale of an intervention"@en .
+cp:InterventionRationale rdfs:isDefinedBy <http://data.cochrane.org/ontologies/pico/> .
+
+cp:Setting rdf:type owl:Class .
+cp:Setting rdfs:label "Setting"@en .
+cp:Setting rdfs:comment "Setting of an intervention"@en .
+cp:Setting rdfs:isDefinedBy <http://data.cochrane.org/ontologies/pico/> .
+
+cp:ModeOfDelivery rdf:type owl:Class .
+cp:ModeOfDelivery rdfs:label "ModeOfDelivery"@en .
+cp:ModeOfDelivery rdfs:comment "Mode of delivery for an intervention"@en .
+cp:ModeOfDelivery rdfs:isDefinedBy <http://data.cochrane.org/ontologies/pico/> .
+
+cp:InterventionClassification rdf:type owl:Class .
+cp:InterventionClassification rdfs:label "Intervention Classification"@en .
+cp:InterventionClassification rdfs:comment "The type of intervention"@en .
+cp:InterventionClassification rdfs:isDefinedBy <http://data.cochrane.org/ontologies/pico/> .
+
+cp:Duration rdf:type owl:Class .
+cp:Duration rdfs:label "Duration"@en .
+cp:Duration rdfs:comment "Duration of an intervention"@en .
+cp:Duration rdfs:isDefinedBy <http://data.cochrane.org/ontologies/pico/> .
+
+cp:Dose rdf:type owl:Class .
+cp:Dose rdfs:label "Dose"@en .
+cp:Dose rdfs:comment "Dose in an intervention"@en .
+cp:Dose rdfs:isDefinedBy <http://data.cochrane.org/ontologies/pico/> .
+
+cp:Schedule rdf:type owl:Class .
+cp:Schedule rdfs:label "Schedule"@en .
+cp:Schedule rdfs:comment "Schedule of an intervention" .
+cp:Schedule rdfs:isDefinedBy <http://data.cochrane.org/ontologies/pico/> .
+
+cp:SocialContext rdf:type owl:Class .
+cp:SocialContext rdfs:label "SocialContext"@en .
+cp:SocialContext rdfs:comment "Social context of a population - " .
+cp:SocialContext rdfs:isDefinedBy <http://data.cochrane.org/ontologies/pico/> .
+
+# Object Properties
+
+cp:sex rdf:type owl:ObjectProperty .
+cp:sex rdfs:domain cp:Population .
+cp:sex rdfs:range cp:Sex .
+cp:sex rdfs:comment "The sex of a population"@en .
+cp:sex rdfs:label "sex"@en .
+cp:sex rdfs:isDefinedBy <http://data.cochrane.org/ontologies/pico/> .
+
+cp:age rdf:type owl:ObjectProperty .
+cp:age rdfs:domain cp:Population .
+cp:age rdfs:range cp:Age .
+cp:age rdfs:comment "The age of a population"@en .
+cp:age rdfs:label "age"@en .
+cp:age rdfs:isDefinedBy <http://data.cochrane.org/ontologies/pico/> .
+
+cp:condition rdf:type owl:ObjectProperty .
+cp:condition rdfs:domain cp:Population .
+cp:condition rdfs:range cp:Condition .
+cp:condition proton:transitiveOver cc:broaderConcept .
+cp:condition rdfs:comment "A precondition of the population."@en .
+cp:condition rdfs:label "condition"@en .
+cp:condition rdfs:isDefinedBy <http://data.cochrane.org/ontologies/pico/> .
+
+cp:population rdf:type owl:ObjectProperty .
+cp:population rdfs:domain cp:PICO .
+cp:population rdfs:range cp:Population .
+cp:population rdfs:comment "A population"@en .
+cp:population rdfs:label "population"@en .
+cp:population rdfs:isDefinedBy <http://data.cochrane.org/ontologies/pico/> .
+
+cp:excludedPopulation rdf:type owl:ObjectProperty .
+cp:excludedPopulation rdfs:domain cp:PICO .
+cp:excludedPopulation rdfs:range cp:Population .
+cp:excludedPopulation rdfs:comment "An excluded sub-population."@en .
+cp:excludedPopulation rdfs:label "excludedPopulation"@en .
+cp:excludedPopulation rdfs:isDefinedBy <http://data.cochrane.org/ontologies/pico/> .
+
+cp:outcomeGroup rdf:type owl:ObjectProperty .
+cp:outcomeGroup rdfs:domain cp:PICO .
+cp:outcomeGroup rdfs:range cp:OutcomeGroup .
+cp:outcomeGroup rdfs:comment "Relates a pico to an outcome group"@en .
+cp:outcomeGroup rdfs:label "outcomeGroup"@en .
+cp:outcomeGroup rdfs:isDefinedBy <http://data.cochrane.org/ontologies/pico/> .
+
+cp:outcome rdf:type owl:ObjectProperty .
+cp:outcome rdfs:domain cp:OutcomeGroup .
+cp:outcome rdfs:range cp:Outcome .
+cp:outcome rdfs:comment "Relates a outcome group to an outcome"@en .
+cp:outcome rdfs:label "outcome"@en .
+cp:outcome rdfs:isDefinedBy <http://data.cochrane.org/ontologies/pico/> .
+
+cp:excludedOutcome rdf:type owl:ObjectProperty .
+cp:excludedOutcome rdfs:domain cp:OutcomeGroup .
+cp:excludedOutcome rdfs:range cp:Outcome .
+cp:excludedOutcome rdfs:comment "An excluded outcome."@en .
+cp:excludedOutcome rdfs:label "excludedOutcome"@en .
+cp:excludedOutcome rdfs:isDefinedBy <http://data.cochrane.org/ontologies/pico/> .
+
+cp:parentOutcome rdf:type owl:ObjectProperty .
+cp:parentOutcome rdfs:domain cp:Outcome .
+cp:parentOutcome rdfs:range cp:Outcome .
+cp:parentOutcome owl:inverseOf cp:childOutcome .
+cp:parentOutcome rdfs:comment "References the parent outcome"@en .
+cp:parentOutcome rdfs:label "parentOutcome"@en .
+cp:parentOutcome rdfs:isDefinedBy <http://data.cochrane.org/ontologies/pico/> .
+
+cp:childOutcome rdf:type owl:ObjectProperty .
+cp:childOutcome rdfs:domain cp:Outcome .
+cp:childOutcome rdfs:range cp:Outcome .
+cp:childOutcome rdfs:comment "The child outcome"@en .
+cp:childOutcome rdfs:label "childOutcome"@en .
+cp:childOutcome rdfs:isDefinedBy <http://data.cochrane.org/ontologies/pico/> .
+
+cp:outcomeCondition rdf:type owl:ObjectProperty .
+cp:outcomeCondition rdfs:domain cp:Outcome .
+cp:outcomeCondition rdfs:range cp:Condition .
+cp:outcomeCondition proton:transitiveOver cc:broaderConcept .
+cp:outcomeCondition rdfs:comment "A side effect outcome condition."@en .
+cp:outcomeCondition rdfs:label "outcomeCondition"@en .
+cp:outcomeCondition rdfs:isDefinedBy <http://data.cochrane.org/ontologies/pico/> .
+
+cp:outcomeClassification rdf:type owl:ObjectProperty .
+cp:outcomeClassification rdfs:domain cp:Outcome .
+cp:outcomeClassification rdfs:range cp:OutcomeClassification .
+cp:outcomeClassification rdfs:comment "The type of outcome."@en .
+cp:outcomeClassification rdfs:label "outcomeClassification"@en .
+cp:outcomeClassification rdfs:isDefinedBy <http://data.cochrane.org/ontologies/pico/> .
+
+cp:interventionGroup rdf:type owl:ObjectProperty .
+cp:interventionGroup rdfs:domain cp:PICO .
+cp:interventionGroup rdfs:range cp:InterventionGroup .
+cp:interventionGroup rdfs:comment "An intervention group"@en .
+cp:interventionGroup rdfs:label "interventionGroup"@en .
+cp:interventionGroup rdfs:isDefinedBy <http://data.cochrane.org/ontologies/pico/> .
+
+cp:intervention rdf:type owl:ObjectProperty .
+cp:intervention rdfs:domain cp:InterventionGroup .
+cp:intervention rdfs:range cp:Intervention .
+cp:intervention rdfs:comment "An intervention"@en .
+cp:intervention rdfs:label "intervention"@en .
+cp:intervention rdfs:isDefinedBy <http://data.cochrane.org/ontologies/pico/> .
+
+cp:excludedIntervention rdf:type owl:ObjectProperty .
+cp:excludedIntervention rdfs:domain cp:InterventionGroup .
+cp:excludedIntervention rdfs:range cp:Intervention .
+cp:excludedIntervention rdfs:comment "An excluded intervention."@en .
+cp:excludedIntervention rdfs:label "excludedIntervention"@en .
+cp:excludedIntervention rdfs:isDefinedBy <http://data.cochrane.org/ontologies/pico/> .
+
+cp:parentIntervention rdf:type owl:ObjectProperty .
+cp:parentIntervention rdfs:domain cp:Intervention .
+cp:parentIntervention rdfs:range cp:Intervention .
+cp:parentIntervention owl:inverseOf cp:childIntervention .
+cp:parentIntervention rdfs:comment "The parent intervention"@en .
+cp:parentIntervention rdfs:label "parentIntervention"@en .
+cp:parentIntervention rdfs:isDefinedBy <http://data.cochrane.org/ontologies/pico/> .
+
+cp:childIntervention rdf:type owl:ObjectProperty .
+cp:childIntervention rdfs:domain cp:Intervention .
+cp:childIntervention rdfs:range cp:Intervention .
+cp:childIntervention rdfs:comment "The child intervention"@en .
+cp:childIntervention rdfs:label "childIntervention"@en .
+cp:childIntervention rdfs:isDefinedBy <http://data.cochrane.org/ontologies/pico/> .
+
+cp:appliedIntervention rdf:type owl:ObjectProperty .
+cp:appliedIntervention rdfs:domain cp:Intervention .
+cp:appliedIntervention rdfs:range cp:AppliedIntervention .
+cp:appliedIntervention proton:transitiveOver cc:broaderConcept .
+cp:appliedIntervention rdfs:comment "Associates an appliedIntervention (material, procedure) with a PICO Intervention instance."@en .
+cp:appliedIntervention rdfs:label "appliedIntervention"@en .
+cp:appliedIntervention rdfs:isDefinedBy <http://data.cochrane.org/ontologies/pico/> .
+
+cp:interventionProvider rdf:type owl:ObjectProperty .
+cp:interventionProvider rdfs:domain cp:Intervention .
+cp:interventionProvider rdfs:range cp:InterventionProvider .
+cp:interventionProvider rdfs:comment "Intervention provider of an intervention"@en .
+cp:interventionProvider rdfs:label "interventionProvider"@en .
+cp:interventionProvider rdfs:isDefinedBy <http://data.cochrane.org/ontologies/pico/> .
+
+cp:interventionRationale rdf:type owl:ObjectProperty .
+cp:interventionRationale rdfs:domain cp:Intervention .
+cp:interventionRationale rdfs:range cp:InterventionRationale .
+cp:interventionRationale rdfs:comment "Rationale of an intervention"@en .
+cp:interventionRationale rdfs:label "interventionRationale"@en .
+cp:interventionRationale rdfs:isDefinedBy <http://data.cochrane.org/ontologies/pico/> .
+
+cp:setting rdf:type owl:ObjectProperty .
+cp:setting rdfs:domain cp:Intervention .
+cp:setting rdfs:range cp:Setting .
+cp:setting rdfs:comment "setting of an intervention"@en .
+cp:setting rdfs:label "setting"@en .
+cp:setting rdfs:isDefinedBy <http://data.cochrane.org/ontologies/pico/> .
+
+cp:modeOfDelivery rdf:type owl:ObjectProperty .
+cp:modeOfDelivery rdfs:domain cp:Intervention .
+cp:modeOfDelivery rdfs:range cp:ModeOfDelivery .
+cp:modeOfDelivery rdfs:comment "mode of delivery"@en .
+cp:modeOfDelivery rdfs:label "modeOfDelivery"@en .
+cp:modeOfDelivery rdfs:isDefinedBy <http://data.cochrane.org/ontologies/pico/> .
+
+cp:interventionClassification rdf:type owl:ObjectProperty .
+cp:interventionClassification rdfs:domain cp:Intervention .
+cp:interventionClassification rdfs:range cp:InterventionClassification .
+cp:interventionClassification rdfs:comment "The type of intervention."@en .
+cp:interventionClassification rdfs:label "interventionClassification"@en .
+cp:interventionClassification rdfs:isDefinedBy <http://data.cochrane.org/ontologies/pico/> .
+
+cp:duration rdf:type owl:ObjectProperty .
+cp:duration rdfs:domain cp:Intervention .
+cp:duration rdfs:range cp:Duration .
+cp:duration rdfs:comment "duration of an intervention"@en .
+cp:duration rdfs:label "duration"@en .
+cp:duration rdfs:isDefinedBy <http://data.cochrane.org/ontologies/pico/> .
+
+cp:schedule rdf:type owl:ObjectProperty .
+cp:schedule rdfs:domain cp:Intervention .
+cp:schedule rdfs:range cp:Schedule .
+cp:schedule rdfs:comment "schedule of an intervention"@en .
+cp:schedule rdfs:label "schedule"@en .
+cp:schedule rdfs:isDefinedBy <http://data.cochrane.org/ontologies/pico/> .
+
+cp:dose rdf:type owl:ObjectProperty .
+cp:dose rdfs:domain cp:Intervention .
+cp:dose rdfs:range cp:Dose .
+cp:dose rdfs:comment "Dose used in an intervention"@en .
+cp:dose rdfs:label "dose"@en .
+cp:dose rdfs:isDefinedBy <http://data.cochrane.org/ontologies/pico/> .
+
+cp:hasSocialContext rdf:type owl:ObjectProperty .
+cp:hasSocialContext rdfs:domain cp:Population .
+cp:hasSocialContext rdfs:range cp:SocialContext .
+cp:hasSocialContext rdfs:comment "The social context of a population"@en .
+cp:hasSocialContext rdfs:label "hasSocialContext"@en .
+cp:hasSocialContext rdfs:isDefinedBy <http://data.cochrane.org/ontologies/pico/> .
+
+# Datatype Properties
+
+cp:outcomeText rdf:type owl:DatatypeProperty .
+cp:outcomeText rdfs:domain cp:Outcome .
+cp:outcomeText rdfs:range rdf:langString .
+cp:outcomeText rdfs:comment "Free text associated with an Outcome."@en .
+cp:outcomeText rdfs:label "outcomeText"@en .
+cp:outcomeText rdfs:isDefinedBy <http://data.cochrane.org/ontologies/pico/> .
+
+cp:isComparator rdf:type owl:DatatypeProperty .
+cp:isComparator rdfs:domain cp:Intervention .
+cp:isComparator rdfs:range xsd:boolean .
+cp:isComparator rdfs:comment "The comparator flag."@en .
+cp:isComparator rdfs:label "isComparator"@en .
+cp:isComparator rdfs:isDefinedBy <http://data.cochrane.org/ontologies/pico/> .
