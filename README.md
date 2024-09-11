@@ -2,7 +2,7 @@
 PICO extractor 
 
 ## Application domain
-Natural Language Processing 
+Natural Language Processing, Semantic Web 
 
 ## Keywords 
 Biomedicine, Scientific Hypotheses, PICO, Information Extraction, Frame Extractor, Knowledge Graphs, RDF 
